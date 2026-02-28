@@ -8,9 +8,9 @@ import InfiniteMarquee from '../ui/InfiniteMarquee';
 
 function TestimonialCard({ t }) {
   return (
-    <div className="w-[280px] flex-shrink-0 rounded-2xl border border-white/[0.06] bg-navy-mid p-5 sm:w-[320px] md:w-[350px]">
+    <div className="w-[220px] flex-shrink-0 rounded-2xl border border-white/[0.06] bg-navy-mid p-3 sm:w-[300px] sm:p-5 md:w-[350px] md:p-5">
       {/* Stars */}
-      <div className="mb-3 flex gap-1">
+      <div className="mb-2 flex gap-1 sm:mb-3">
         {Array.from({ length: 5 }).map((_, i) => (
           <Star
             key={i}
@@ -22,21 +22,21 @@ function TestimonialCard({ t }) {
       </div>
 
       {/* Quote */}
-      <p className="mb-5 font-sans text-sm leading-relaxed text-cream/70">
+      <p className="mb-3 font-sans text-xs leading-relaxed text-cream/70 sm:mb-5 sm:text-sm">
         &ldquo;{t.quote}&rdquo;
       </p>
 
       {/* Author */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2 sm:gap-3">
         <img
           src={`https://picsum.photos/seed/${t.avatarSeed}/80/80`}
           alt={t.name}
-          className="h-10 w-10 rounded-full object-cover border border-gold/30"
+          className="h-8 w-8 rounded-full object-cover border border-gold/30 sm:h-10 sm:w-10"
           loading="lazy"
         />
-        <div>
-          <p className="font-display text-sm text-cream">{t.name}</p>
-          <p className="font-sans text-xs text-cream/40">{t.university}</p>
+        <div className="min-w-0">
+          <p className="font-display text-xs text-cream sm:text-sm truncate">{t.name}</p>
+          <p className="font-sans text-[10px] text-cream/40 sm:text-xs truncate">{t.university}</p>
         </div>
       </div>
     </div>
@@ -48,13 +48,13 @@ export default function Testimonials() {
   const secondHalf = testimonials.slice(4);
 
   return (
-    <section id="testimonials" className="bg-cream py-20 lg:py-28 overflow-hidden">
+    <section id="testimonials" className="bg-cream py-16 sm:py-20 lg:py-28 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader title="Student Success Stories" light />
       </div>
 
       <motion.div
-        className="space-y-5"
+        className="space-y-3 sm:space-y-5"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}

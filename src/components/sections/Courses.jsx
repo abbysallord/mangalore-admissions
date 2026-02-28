@@ -22,20 +22,20 @@ export default function Courses() {
   );
 
   return (
-    <section id="courses" className="bg-navy py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="courses" className="bg-navy py-16 sm:py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <SectionHeader
           title="Our Programmes"
           subtitle="Expert-guided admission pathways designed for every stream and aspiration."
         />
 
         {/* Filter tabs */}
-        <div className="mb-12 flex flex-wrap items-center justify-center gap-3">
+        <div className="mb-8 -mx-5 px-5 sm:mx-0 sm:px-0 sm:mb-12 flex overflow-x-auto scrollbar-hide sm:flex-wrap sm:overflow-x-visible items-center justify-start sm:justify-center gap-2 sm:gap-3 pb-2 sm:pb-0">
           {categories.map((cat) => (
             <motion.button
               key={cat}
               onClick={() => setActive(cat)}
-              className={`rounded-full border px-5 py-2 font-sans text-sm font-semibold transition-colors cursor-pointer ${
+              className={`flex-shrink-0 rounded-full border px-4 py-2 font-sans text-xs sm:text-sm font-semibold transition-colors cursor-pointer ${
                 active === cat
                   ? 'border-gold bg-gold/10 text-gold'
                   : 'border-white/10 text-cream/50 hover:border-gold/30 hover:text-cream'
@@ -51,7 +51,7 @@ export default function Courses() {
         {/* Course grid */}
         <motion.div
           layout
-          className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+          className="grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           <AnimatePresence mode="popLayout">
             {filtered.map((course, i) => (
@@ -64,7 +64,7 @@ export default function Courses() {
                 transition={{ duration: 0.3, delay: i * 0.05 }}
               >
                 <TiltCard>
-                  <div className="relative flex h-full flex-col p-6">
+                    <div className="relative flex h-full flex-col p-4 sm:p-6">
                     {/* Border Beam */}
                     <BorderBeam duration={6} bgColor="bg-navy-mid" />
 

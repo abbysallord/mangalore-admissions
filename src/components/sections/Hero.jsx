@@ -17,15 +17,15 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden"
+      className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden px-0 pb-12 pt-20 sm:pb-0 sm:pt-0"
     >
       {/* Aurora BG */}
       <AuroraBackground />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-5xl px-4 text-center xs:px-5 sm:px-6 lg:px-8">
         <motion.p
-          className="mb-6 font-sans text-sm uppercase tracking-[0.3em] text-gold"
+          className="mb-3 font-sans text-[0.65rem] uppercase tracking-[0.18em] text-gold xs:text-xs xs:tracking-[0.2em] sm:mb-6 sm:text-sm sm:tracking-[0.3em]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
@@ -33,7 +33,7 @@ export default function Hero() {
           Premier College Admissions Consulting
         </motion.p>
 
-        <h1 className="font-display text-3xl leading-tight text-cream sm:text-4xl md:text-5xl lg:text-7xl">
+        <h1 className="font-display text-[1.5rem] leading-[1.25] text-cream xs:text-[1.75rem] sm:text-4xl md:text-5xl lg:text-7xl">
           <TextReveal text="Mangalore's Premier" delay={0.3} splitBy="word" />
           <br />
           <span className="text-gold">
@@ -42,7 +42,7 @@ export default function Hero() {
         </h1>
 
         <motion.p
-          className="mx-auto mt-5 max-w-2xl font-sans text-base leading-relaxed text-cream/70 sm:text-lg md:text-xl"
+          className="mx-auto mt-3 max-w-2xl px-1 font-sans text-[0.8rem] leading-relaxed text-cream/70 xs:mt-4 xs:px-2 xs:text-sm sm:mt-5 sm:px-0 sm:text-lg md:text-xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1 }}
@@ -53,17 +53,17 @@ export default function Hero() {
 
         {/* CTAs */}
         <motion.div
-          className="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4"
+          className="mt-5 flex flex-col items-center justify-center gap-3 xs:mt-6 sm:mt-10 sm:flex-row sm:gap-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2 }}
         >
-          <ShimmerButton onClick={() => scrollTo('#contact')}>
+          <ShimmerButton onClick={() => scrollTo('#contact')} className="w-full xs:w-auto">
             Book Free Consultation
           </ShimmerButton>
           <motion.button
             onClick={() => scrollTo('#courses')}
-            className="rounded-full border border-cream/20 px-8 py-3 font-sans text-sm font-semibold text-cream transition-colors hover:border-gold hover:text-gold"
+            className="w-full rounded-full border border-cream/20 px-6 py-3 font-sans text-sm font-semibold text-cream transition-colors hover:border-gold hover:text-gold xs:w-auto sm:px-8"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
           >
@@ -73,7 +73,7 @@ export default function Hero() {
 
         {/* College marquee pills */}
         <motion.div
-          className="mt-12 sm:mt-16"
+          className="mt-6 xs:mt-8 sm:mt-16"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
@@ -82,7 +82,7 @@ export default function Hero() {
             {collegePartners.map((name) => (
               <span
                 key={name}
-                className="inline-block whitespace-nowrap rounded-full border border-gold/20 bg-gold/10 px-4 py-1.5 font-sans text-xs font-medium text-gold"
+                className="inline-block whitespace-nowrap rounded-full border border-gold/20 bg-gold/10 px-3 py-1 font-sans text-[0.65rem] font-medium text-gold xs:px-4 xs:py-1.5 xs:text-xs"
               >
                 {name}
               </span>
@@ -93,11 +93,11 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
+        className="absolute bottom-3 left-1/2 z-10 -translate-x-1/2 xs:bottom-4 sm:bottom-8"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
       >
-        <ChevronDown className="h-8 w-8 text-cream/40" />
+        <ChevronDown className="h-6 w-6 text-cream/40 xs:h-8 xs:w-8" />
       </motion.div>
     </section>
   );

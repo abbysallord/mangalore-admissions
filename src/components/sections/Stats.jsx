@@ -14,12 +14,12 @@ const iconMap = {
 
 export default function Stats() {
   return (
-    <section className="relative bg-navy-mid py-16 sm:py-20">
+    <section className="relative bg-navy-mid py-12 sm:py-16 md:py-20">
       {/* Top fade */}
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
 
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-4">
           {stats.map((stat, i) => {
             const Icon = iconMap[stat.icon];
             return (
@@ -34,7 +34,7 @@ export default function Stats() {
                 {Icon && (
                   <Icon className="mx-auto mb-3 h-8 w-8 text-gold" />
                 )}
-                <div className="font-display text-3xl text-cream sm:text-4xl md:text-5xl">
+                <div className="font-display text-2xl text-cream sm:text-4xl md:text-5xl">
                   <NumberTicker
                     value={stat.value}
                     suffix={stat.suffix}

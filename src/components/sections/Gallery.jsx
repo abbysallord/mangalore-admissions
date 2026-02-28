@@ -11,8 +11,8 @@ export default function Gallery() {
   const [loaded, setLoaded] = useState({});
 
   return (
-    <section id="gallery" className="bg-cream py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="gallery" className="bg-cream py-16 sm:py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <SectionHeader
           title="Campus Life & Success Stories"
           light

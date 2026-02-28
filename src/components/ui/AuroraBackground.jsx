@@ -6,6 +6,7 @@ const blobs = [
   {
     color: 'radial-gradient(circle, rgba(212,168,83,0.25) 0%, transparent 70%)',
     size: 500,
+    mobileSize: 250,
     x: [0, 80, -50, 40, 0],
     y: [0, -60, 40, -30, 0],
     scale: [1, 1.15, 0.9, 1.1, 1],
@@ -16,6 +17,7 @@ const blobs = [
   {
     color: 'radial-gradient(circle, rgba(11,22,40,0.7) 0%, transparent 70%)',
     size: 600,
+    mobileSize: 300,
     x: [0, -100, 70, -40, 0],
     y: [0, 50, -80, 30, 0],
     scale: [1, 0.85, 1.2, 0.9, 1],
@@ -26,6 +28,7 @@ const blobs = [
   {
     color: 'radial-gradient(circle, rgba(20,32,64,0.5) 0%, transparent 70%)',
     size: 550,
+    mobileSize: 280,
     x: [0, 60, -80, 30, 0],
     y: [0, 40, -60, 70, 0],
     scale: [1, 1.1, 0.85, 1.1, 1],
@@ -36,6 +39,7 @@ const blobs = [
   {
     color: 'radial-gradient(circle, rgba(212,168,83,0.12) 0%, transparent 70%)',
     size: 400,
+    mobileSize: 200,
     x: [0, -40, 60, -20, 0],
     y: [0, -50, 20, -40, 0],
     scale: [1, 1.2, 0.9, 1.05, 1],
@@ -46,6 +50,8 @@ const blobs = [
 ];
 
 export default function AuroraBackground() {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
+
   return (
     <div
       className="absolute inset-0 overflow-hidden pointer-events-none"
@@ -60,8 +66,8 @@ export default function AuroraBackground() {
           key={i}
           className="absolute rounded-full"
           style={{
-            width: blob.size,
-            height: blob.size,
+            width: isMobile ? blob.mobileSize : blob.size,
+            height: isMobile ? blob.mobileSize : blob.size,
             background: blob.color,
             left: blob.left,
             top: blob.top,

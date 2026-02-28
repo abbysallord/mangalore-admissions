@@ -7,8 +7,8 @@ import collegePartners from '../../data/collegePartners';
 
 export default function CollegePartners() {
   return (
-    <section className="relative bg-navy py-20 overflow-hidden">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-navy py-16 sm:py-20 overflow-hidden">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <SectionHeader title="Colleges We Place Students In" />
 
         <motion.div
@@ -21,7 +21,7 @@ export default function CollegePartners() {
             {collegePartners.map((name) => (
               <span
                 key={name}
-                className="inline-block whitespace-nowrap rounded-lg border border-white/[0.08] bg-navy-mid px-6 py-3 font-sans text-sm font-medium text-cream/80 transition-colors hover:border-gold/30 hover:text-gold"
+                className="inline-block whitespace-nowrap rounded-lg border border-white/[0.08] bg-navy-mid px-4 py-2.5 font-sans text-xs sm:text-sm sm:px-6 sm:py-3 font-medium text-cream/80 transition-colors hover:border-gold/30 hover:text-gold"
               >
                 {name}
               </span>

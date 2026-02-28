@@ -42,11 +42,11 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-navy-mid py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="bg-navy-mid py-16 sm:py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <SectionHeader title="Start Your Journey Today" />
 
-        <div className="grid gap-12 lg:grid-cols-2">
+        <div className="grid gap-8 sm:gap-12 lg:grid-cols-2">
           {/* Left — Contact Info */}
           <motion.div
             className="space-y-8"
@@ -55,7 +55,7 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="relative overflow-hidden rounded-2xl border border-white/[0.06] bg-navy p-8">
+            <div className="relative overflow-hidden rounded-2xl border border-white/[0.06] bg-navy p-5 sm:p-8">
               <BorderBeam duration={5} bgColor="bg-navy" />
               <div className="relative z-10 space-y-6">
                 <div className="flex items-start gap-4">
@@ -111,7 +111,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             {submitted ? (
-              <div className="flex flex-col items-center justify-center rounded-2xl border border-white/[0.06] bg-navy p-12 text-center">
+              <div className="flex flex-col items-center justify-center rounded-2xl border border-white/[0.06] bg-navy p-8 sm:p-12 text-center">
                 {/* Animated check SVG */}
                 <motion.svg
                   viewBox="0 0 64 64"
@@ -153,7 +153,7 @@ export default function Contact() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="relative space-y-5 rounded-2xl border border-white/[0.06] bg-navy p-8"
+                className="relative space-y-5 rounded-2xl border border-white/[0.06] bg-navy p-5 sm:p-8"
               >
                 <BorderBeam duration={6} bgColor="bg-navy" />
                 <div className="relative z-10 space-y-5">

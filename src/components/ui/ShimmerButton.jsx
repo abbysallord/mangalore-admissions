@@ -12,7 +12,7 @@ export default function ShimmerButton({
     <motion.button
       type={type}
       onClick={onClick}
-      className={`relative inline-flex items-center justify-center overflow-hidden rounded-full border border-gold/30 bg-navy-mid px-8 py-3 font-sans text-sm font-semibold text-gold transition-colors hover:border-gold/50 ${className}`}
+      className={`relative inline-flex items-center justify-center overflow-hidden rounded-full border border-gold/30 bg-navy-mid px-6 py-3 font-sans text-sm font-semibold text-gold transition-colors hover:border-gold/50 sm:px-8 ${className}`}
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.97 }}
     >

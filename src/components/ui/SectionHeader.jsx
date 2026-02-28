@@ -10,9 +10,9 @@ export default function SectionHeader({
   className = '',
 }) {
   return (
-    <div className={`mb-12 text-center sm:mb-16 ${className}`}>
+    <div className={`mb-8 text-center sm:mb-12 md:mb-16 ${className}`}>
       <h2
-        className={`font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight ${
+        className={`font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight ${
           light ? 'text-navy' : 'text-cream'
         }`}
       >

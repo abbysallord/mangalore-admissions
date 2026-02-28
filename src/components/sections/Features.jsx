@@ -15,24 +15,24 @@ import SectionHeader from '../ui/SectionHeader';
 
 const iconMap = { Map, Users, ShieldCheck, Stethoscope, Cpu, HeartPulse };
 
-// Grid size mapping — only applied on md+
+// Grid size mapping — sm gets 2 cols, md gets 3 cols with bento effect
 const sizeClasses = {
-  large: 'md:col-span-2 md:row-span-2',
-  medium: 'md:col-span-1 md:row-span-2',
-  small: 'md:col-span-1 md:row-span-1',
+  large: 'sm:col-span-2 md:col-span-2 md:row-span-2',
+  medium: 'sm:col-span-1 md:col-span-1 md:row-span-2',
+  small: 'sm:col-span-1 md:col-span-1 md:row-span-1',
 };
 
 export default function Features() {
   return (
-    <section id="features" className="bg-navy py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="features" className="bg-navy py-16 sm:py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <SectionHeader
           title="Why Choose Us"
           subtitle="A decade of local expertise, personalised guidance, and an unmatched network across Mangalore's top institutions."
         />
 
         {/* auto-rows-auto on mobile, fixed rows on md+ for the bento effect */}
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:auto-rows-[180px]">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:auto-rows-[180px]">
           {features.map((feature, i) => {
             const Icon = iconMap[feature.icon];
             return (

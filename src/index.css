@@ -51,6 +51,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* DO NOT set overflow-x: hidden on body — it breaks scroll.
      Applied on html instead. */
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Prevent horizontal overflow from decorative elements */
+#root {
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -96,6 +102,17 @@ p, li, span, a, label, input, textarea, select, button {
 }
 
 /* ──────────────────────────────
+   Scrollbar-hide utility for filter tabs
+   ────────────────────────────── */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ──────────────────────────────
    Marquee Pause on Hover
    ────────────────────────────── */
 .marquee-container:hover .marquee-track {
@@ -109,17 +126,36 @@ p, li, span, a, label, input, textarea, select, button {
   -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 8%,
-    black 92%,
+    black 4%,
+    black 96%,
     transparent 100%
   );
   mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 8%,
-    black 92%,
+    black 4%,
+    black 96%,
     transparent 100%
   );
+}
+
+@media (min-width: 640px) {
+  .marquee-mask {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+  }
 }
 
 /* ──────────────────────────────
@@ -155,9 +191,34 @@ p, li, span, a, label, input, textarea, select, button {
   padding-bottom: 5rem;
 }
 
+@media (min-width: 640px) {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
 @media (min-width: 1024px) {
   .section-padding {
     padding-top: 7rem;
     padding-bottom: 7rem;
+  }
+}
+
+/* ──────────────────────────────
+   Mobile-specific tweaks
+   ────────────────────────────── */
+@media (max-width: 639px) {
+  /* Ensure tap targets are accessible */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Prevent tiny tap targets in nav and footer lists */
+  nav a, footer a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
   }
 }

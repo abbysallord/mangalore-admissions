@@ -34,7 +34,7 @@ export default function Lightbox({ image, onClose }) {
 
           {/* Content */}
           <motion.div
-            className="relative z-10 max-w-4xl w-full"
+            className="relative z-10 max-w-4xl w-full px-2 sm:px-0"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
@@ -44,10 +44,11 @@ export default function Lightbox({ image, onClose }) {
             {/* Close button */}
             <button
               onClick={onClose}
-              className="absolute -top-12 right-0 text-cream/60 hover:text-gold transition-colors cursor-pointer"
+              className="absolute -top-10 right-2 sm:-top-12 sm:right-0 text-cream/60 hover:text-gold transition-colors cursor-pointer z-20"
               aria-label="Close lightbox"
             >
-              <X size={32} />
+              <X size={28} className="sm:hidden" />
+              <X size={32} className="hidden sm:block" />
             </button>
 
             {/* Image */}

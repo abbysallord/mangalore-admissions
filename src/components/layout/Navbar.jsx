@@ -27,7 +27,7 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:h-20 sm:px-6 lg:px-8">
         {/* Logo */}
         <a
           href="#hero"
@@ -82,7 +82,7 @@ export default function Navbar() {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="flex flex-col gap-3 px-4 py-5">
+            <div className="flex flex-col gap-4 px-5 py-5">
               {navigation.map((link) => (
                 <a
                   key={link.href}
